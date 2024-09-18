@@ -1,3 +1,5 @@
+New-LocalUser -Name "CustomUserName" -Password (ConvertTo-SecureString "Password123" -AsPlainText -Force)
+
 Write-Host "[+] Setting network profile"
 Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled False
 Write-Host "[+] Done."
