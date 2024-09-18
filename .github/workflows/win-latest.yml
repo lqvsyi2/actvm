@@ -1,23 +1,23 @@
-name: win-latest
+name: 最新Windows
 
 on:
   workflow_dispatch:
     inputs:
       authcode:
-        description: "CRD Code"
+        description: "CRD代码"
         required: true
       pincode:
-        description: "6 digit PIN"
+        description: "6位PIN码"
         required: true
 
 jobs:
   setup:
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v3
-      - name: Initializing Setup
-        run: ./setup/win-latest/setup.ps1
-      - name: Starting Chrome Remote Desktop (CRD)
-        run: ${{ github.event.inputs.authcode }} -pin=${{ github.event.inputs.pincode }}
-      - name: Keep Alive
-        run: ./setup/win-latest/timeout.ps1
+      - 使用: actions/checkout@v3
+      - 名称: 初始化设置
+        运行: ./setup/win-latest/setup.ps1
+      - 名称: 启动Chrome远程桌面(CRD)
+        运行: ${{ github.event.inputs.authcode }} -pin=${{ github.event.inputs.pincode }}
+      - 名称: 保持活动
+        运行: ./setup/win-latest/timeout.ps1
